@@ -4,6 +4,18 @@ function sortear(){
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
+    // Condicional: se o numero incial for >= que o final
+    if (de >= ate) {
+        alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
+        return;
+      }
+
+    //   Condicional: quantidade tem que ser maior que a quantidade de numeros entre "de" e "ate"
+      if (quantidade > (ate - de + 1)) {
+        alert('Campo "Quantidade" deve ser menor ou igual ao intervalo informado no campo "Do número" até o campo "Até o número". Verifique!');
+        return;
+      }
+
     let sorteados = [];
     let numero;
 
