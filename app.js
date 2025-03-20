@@ -7,12 +7,20 @@ function sortear(){
     let sorteados = [];
     let numero;
 
+    // Loop de 0 a quantidade escolhida
     for(let i = 0; i < quantidade; i++){
         numero = obterNumeroAleatorio(de, ate);
+        
+        // Loop: enquanto "sorteados" tiver "numero"(True), sortear novo numero
+        while(sorteados.includes(numero)){
+            numero = obterNumeroAleatorio(de, ate);
+        }
+
         sorteados.push(numero);
     }
 
-    alert(sorteados);
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`
 }
 
 // Funcao para achar um valor entre dois numeros, incluindo o ultimo possível
